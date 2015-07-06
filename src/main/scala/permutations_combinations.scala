@@ -5,10 +5,8 @@ object Permutations {
   def permutations[T](list: List[T]): List[List[T]] = {
 
     def permute[T](list:  List[T], start : Int, acc: List[List[T]]): List[List[T]] = {
-  //    println(s"start = $start, list.length= ${list.length}")
       @tailrec
       def loop(list: List[T], index: Int, acc: List[List[T]]): List[List[T]] = {
-    //    println(s"index = $index")
         if (index == list.length ) {
           acc
         } else if (start == list.length - 1) {
@@ -41,9 +39,4 @@ object Permutations {
 
 object PnC extends App {
   println(Permutations.permutations((1 until 15 ).toList).size)
-  /*val list = (0 until 10).toList
-  println(Permutations.swap(list,2,7))
-  println(Permutations.swap(list,0,9))
-  println(Permutations.swap(List(1,2),0,0))
-*/
 }
